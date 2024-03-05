@@ -1,0 +1,1 @@
+INSERT INTO alien (id, name, age, technology) VALUES (04, 'Janvi', 22, 'Law');
