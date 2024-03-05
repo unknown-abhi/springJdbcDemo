@@ -4,9 +4,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-/* For different request we want different objects. So, we need to use the prototype scope.
-By default the scope is singleton.
- */
+/* For different request we want different objects.
+So, we need to use the prototype scope.
+By default, the scope is singleton.*/
 @Scope("prototype")
 public class Alien {
 
@@ -51,5 +51,4 @@ public class Alien {
     public String toString() {
         return "Alien [id=" + id + ", name=" + name + ", age=" + age + ", technology=" + technology + "]";
     }
-
 }

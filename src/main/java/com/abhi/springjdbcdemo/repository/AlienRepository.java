@@ -23,7 +23,7 @@ public class AlienRepository {
     }
 
     public void save(Alien alien) {
-        String sql = "INSERT INTO alien (id, name, age, technology) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO alien (id, name, age, technology) VALUES (?,?,?,?);";
 
         int row = jdbcTemplate.update(sql, alien.getId(), alien.getName(), alien.getAge(), alien.getTechnology());
         System.out.println(row + " row added");
@@ -31,9 +31,9 @@ public class AlienRepository {
 
     public List<Alien> findAll() {
 
-        String sql = "SELECT * FROM alien";
+        String sql = "SELECT * FROM alien;";
 
-        List<Alien> aliens = jdbcTemplate.query(sql, (rs, rowNum) -> {
+        return jdbcTemplate.query(sql, (rs, rowNum) -> {
             Alien a = new Alien();
             a.setId(rs.getInt("id"));
             a.setName(rs.getString("name"));
@@ -41,7 +41,5 @@ public class AlienRepository {
             a.setTechnology(rs.getString("technology"));
             return a;
         });
-
-        return aliens;
     }
 }
