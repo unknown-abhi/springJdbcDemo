@@ -15,7 +15,7 @@ public class SpringJdbcDemoApplication {
 
         Alien alien = context.getBean(Alien.class);
         alien.setId(06);
-        alien.setName("Abi");
+        alien.setName("Abhi");
         alien.setAge(23);
         alien.setTechnology("Java");
 
